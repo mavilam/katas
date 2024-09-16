@@ -1,0 +1,14 @@
+{
+  "name": "simple-mars-rover",
+  "version": "1.0.0",
+  "description": "Simple mars rover kata",
+  "main": "simpleMarsRover.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
