@@ -1,0 +1,14 @@
+{
+  "name": "arithmetics",
+  "version": "1.0.0",
+  "description": "An arithmetics kata implementation",
+  "main": "arithmetics.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
