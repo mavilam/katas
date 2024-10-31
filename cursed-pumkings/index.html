@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Sombra de las Calabazas Malditas</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            max-width: 800px;
+            padding: 20px;
+            margin: 20px;
+            background-color: #1a1a1a;
+        }
+        h1 {
+            color: #ff7518;
+            text-align: center;
+            font-size: 2.5em;
+            margin-top: 0;
+        }
+        h2 {
+            color: #ffab40;
+            margin-top: 20px;
+            border-bottom: 2px solid #ff7518;
+            padding-bottom: 5px;
+        }
+        h3 {
+            color: #ffa500;
+            margin-top: 15px;
+        }
+        p {
+            font-size: 1.1em;
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #ff7518;
+        }
+        .game-elements, .game-rules, .objective {
+            background-color: #292929;
+            border: 1px solid #ff7518;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 10px;
+        }
+        .game-elements ul, .game-rules ol {
+            margin: 10px 0 10px 20px;
+        }
+        code {
+            background-color: #3a3a3a;
+            padding: 4px 8px;
+            border-radius: 5px;
+            color: #ff7518;
+            font-weight: bold;
+            display: inline-block;
+            margin: 5px 0;
+        }
+        .example {
+            background-color: #1f1f1f;
+            border: 1px solid #ffab40;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        .example pre {
+            color: #ffffff;
+            font-size: 1.2em;
+        }
+        /* Nueva regla para centrar la imagen */
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>La Sombra de las Calabazas Malditas</h1>
+        <img src="./kata-logo.png" class="center"/>
+        <p>En el oscuro pueblo de <span class="highlight">Nocturnia</span>, una antigua maldición ha resurgido. Las calabazas, antes símbolo de protección en Halloween, ahora emanan una presencia siniestra. Los habitantes viven con miedo, y las calles están envueltas en sombras y misterio.</p>
+        <p>Eres <span class="highlight">Raven</span>, una investigadora de lo oculto. Has llegado a Nocturnia tras recibir una misteriosa carta que te implora romper la maldición que consume al pueblo. Descubres que las fuentes de alegría, los preciados caramelos, han desaparecido, reemplazados por enigmas y peligros ocultos bajo calabazas malditas.</p>
+        <p>Tu misión es desentrañar los secretos del mapa encantado, seguir las pistas y evitar las trampas que el mal ha dejado a su paso. Solo así podrás liberar a Nocturnia de la oscuridad y devolver la esperanza a sus habitantes antes de que la noche eterna se apodere del mundo.</p>
+
+        <h2>Instrucciones Técnicas del Juego</h2>
+        
+        <div class="game-elements">
+            <h3>Elementos del Mapa</h3>
+            <ul>
+                <li><span class="highlight">🎃 Calabaza Maldita</span>: Celda que puede ocultar una fuente de caramelos.</li>
+                <li><span class="highlight">🍬 Caramelo Embrujado</span>: Indica que en las celdas adyacentes (arriba, abajo, izquierda o derecha) hay una fuente de caramelos oculta.</li>
+                <li><span class="highlight">🪅 Reliquia Profana</span>: Indica que en las celdas adyacentes, incluyendo las diagonales, hay una fuente de caramelos oculta.</li>
+                <li><span class="highlight">💥 Sello Maligno</span>: Anula las celdas adyacentes, impidiendo que puedan contener fuentes de caramelos.</li>
+            </ul>
+        </div>
+
+        <div class="game-rules">
+            <h3>Reglas del Juego</h3>
+            <ol>
+                <li><span class="highlight">Anulación por Sello Maligno (💥)</span>: Las celdas adyacentes a un 💥 no pueden contener fuentes de caramelos y quedan anuladas.</li>
+                <li><span class="highlight">Detección por Caramelo Embrujado (🍬)</span>: Las celdas adyacentes a un 🍬 deben contener una fuente de caramelos si son calabazas y no están anuladas.</li>
+                <li><span class="highlight">Detección por Reliquia Profana (🪅)</span>: Las celdas adyacentes, incluyendo las diagonales, a una 🪅 deben contener una fuente de caramelos si son calabazas y no están anuladas.</li>
+                <li><span class="highlight">Calabazas Malditas (🎃)</span>: Pueden ocultar una fuente de caramelos o estar vacías. Usa las pistas de 🍬 y 🪅 para identificarlas.</li>
+                <li><span class="highlight">Resolución del Mapa</span>: Marca las calabazas que contienen fuentes con 🌈 y las anuladas por un 💥 con 💀. Las calabazas vacías permanecen como 🎃.</li>
+            </ol>
+        </div>
+
+        <div class="objective">
+            <h3>Objetivo</h3>
+            <p>Determinar la ubicación de todas las fuentes de caramelos ocultas bajo las calabazas malditas, siguiendo las pistas y evitando las celdas anuladas. El objetivo es identificar correctamente todas las fuentes para romper la maldición que afecta a Nocturnia.</p>
+        </div>
+
+        <h3>Ejemplo de Mapa y Solución</h3>
+        <div class="example">
+            <h4>Mapa Inicial</h4>
+            <pre>
+🎃 🍬 🎃 💥
+🍬 🎃 🎃 🎃
+🎃 🎃 🪅 🎃
+🎃 🎃 🎃 🎃
+            </pre>
+
+            <h4>Mapa Resuelto</h4>
+            <pre>
+🌈 🍬 💀 💥
+🍬 🌈 🌈 💀
+🌈 🌈 🪅 🌈
+🎃 🌈 🌈 🌈
+            </pre>
+            <h4>Leyenda</h4>
+            <div>🌈: Calabaza con fuente de caramelos</div>
+            <div>💀: Calabaza anulada por sello maligno</div>
+            <div>🎃: Calabaza sin fuente de caramelos</div>
+        </div>
+    </div>
+</body>
+</html>
